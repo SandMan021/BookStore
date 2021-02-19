@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Moja knjižara | Moja Korpa</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="styles/style.css" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <header>
+        <div id="navWrapper">
+            <nav id="navID">
+                <div id="nav_logoTribar_wrpper">
+                    <div id="nav_logo">
+                        <img src="./img/Logo Moja knjizara.svg" alt="Logo Moja Knjizara" id="imgKnjizara">
+                    </div>
+                    <div id="nav_tribar"></div>
+                </div>
+                <div id="modal">
+                    <div id="modal_zaglavlje">
+                        <span id="modal_zaglavlje_tekst">MENU</span>
+                        <span id="modal_zaglavlje_img"><img src="./img/Beli X.svg"></span>
+                    </div>
+                    <div id="nav_lista">
+                        <a href="index.html">Home</a>
+                        <a href="Pretrazi.html">Pretraživanje</a>
+                        <a href="Racun.html">Račun</a>
+                        <div id="klonKorpe">
+                            <div id="praznoMesto"></div>
+                        </div>
+                    </div>
+                </div>
+                <div id="nav_korpa">
+                    <img src="./img/Korpa.svg" alt="Korpa">
+                    <div id="nav_korpa_vrednosti">
+                        <div>
+                            <span id="vrednosti_brojKnjiga">0</span>
+                            <span>knjiga/e</span>
+                        </div>
+                        <div>
+                            <span id="vrednosti_iznos">0</span>
+                            <span id="vrednost_valuta">RSD</span>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </div>
+        <div id="header_slika">
+            <img src="./img/Header fotografija.jpg">
+        </div>
+    </header>
+    <div id="content">
+        <div id="content_wrapper">
+            <div id="content_wrapper_mojaKorpa">
+                <span id="moja_korpa_tekst">Moja korpa</span>
+                <a href="Racun.html" id="linkRacun">
+                    <div id="moja_korpa_Kasa">
+                        <img src="./img/Kasa.svg" alt="Slika korpe">
+                        <span>Plati</span>
+                    </div>
+                </a>
+                <div id="moja_kopra_Iznos">
+                    <div id="moja_korpa_Iznos_wrapper">
+                        <span>Ukupno</span>
+                        <div id="moja_kopra_Iznos_SamIznos">
+                            <span id="samIznos">0</span>
+                            <span> RSD</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="content_wrapper_knjigeUKorpi">
+            </div>
+            <div id="wraperKlona">
+            <a href="Racun.html" id="linkRacun">
+                <div id="posle_knjiga_uKorpi">
+                    <div id="prazno"></div>
+                </div>
+            </a>
+        </div>
+        </div>
+    </div>
+    <div id="modalDetaljnije">
+        <div id="modalWrapper">
+            <div id="modalWrapperZaglavlje">
+                <span>Podaci o knjizi</span>
+                <img src="./img/Beli X.svg" id="zatvoriModalniDetaljnije">
+            </div>
+            <div id="modalWrapperContent">
+                <div id="modalKnjigaKarticaWrapper"></div>
+                <div id="modalniDonjiDeo">
+                    <div id="DetaljnijeOpis"></div>
+                    <div id="DetaljnijePodaci"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="strelicaNaVrh"><a href="#header_slika"><img src="./img/Na vrh stranice.svg"></a></div>
+    <footer>
+        <span id="footer_naslov">PIN 2020</span>
+        <span id="footer_text">Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+            dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</span>
+    </footer>
+    <script src="scripts/script.js" type="text/javascript"></script>
+    <script src="scripts/mojaKorpa.js" type="text/javascript"></script>
+</body>
+
+</html>

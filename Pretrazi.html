@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html>
+    <head>
+<title>Moja knjižara | Pretrživanje</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="styles/style.css" rel="stylesheet" type="text/css" />
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <header>
+        <div id="navWrapper">
+            <nav id="navID">
+                <div id="nav_logoTribar_wrpper">
+                    <div id="nav_logo">
+                        <img src="./img/Logo Moja knjizara.svg" alt="Logo Moja Knjizara" id="imgKnjizara">
+                    </div>
+                    <div id="nav_tribar"></div>
+                </div>
+                <div id="modal">
+                    <div id="modal_zaglavlje">
+                        <span id="modal_zaglavlje_tekst">MENU</span>
+                        <span id="modal_zaglavlje_img"><img src="./img/Beli X.svg"></span>
+                    </div>
+                    <div id="nav_lista">
+                        <a href="index.html">Home</a>
+                        <a href="Pretrazi.html">Pretraživanje</a>
+                        <a href="Racun.html">Račun</a>
+                        <div id="klonKorpe">
+                            <div id="praznoMesto"></div>
+                        </div>
+                    </div>
+                </div>
+                <div id="nav_korpa">
+                    <img src="./img/Korpa.svg" alt="Korpa">
+                    <div id="nav_korpa_vrednosti">
+                        <div>
+                            <span id="vrednosti_brojKnjiga">0</span>
+                            <span>knjiga/e</span>
+                        </div>
+                        <div>
+                            <span id="vrednosti_iznos">0</span>
+                            <span id="vrednost_valuta">RSD</span>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </div>
+        <div id="header_slika">
+            <img src="./img/Header fotografija.jpg">
+        </div>
+    </header>
+    <div id="content">
+        <div id="content_wrapper">
+            <div id="content_wrapper_Pretrazivanje">Pretraživanje</div>
+            <div id="content_wrapper_pretraga">
+                <div id="pretraga_zaglavlje">
+                    <div id="pretraga_zaglavlje_img_filter"><img id="filter" src="./img/Filteri.svg"></div>
+                    <div id="pretraga_zaglavlje_text"><span>Filter</span></div>
+                    <div id="pretraga_zaglavlje_img_otvaranjeListe"><img id="otvaranjeListe"
+                            src="./img/Otvaranje liste.svg"></div>
+                </div>
+                <div id="pretraga_polja">
+                    <div id="wrapperSvihPretragaPolja">
+                        <div id="pretraga_polja_naslov" class="pretraga_polja_sekcija">
+                            <div class="wrapperZaOverflow">
+                                <span class="pretraga_polja_text">Naslov</span>
+                                <div class="pretraga_polja_box">
+                                    <div id="wrapperNaslovaiDD">
+                                        <div id="Naslov">
+                                            <span id="IzabraniNaslov" contenteditable="true"></span>
+                                            <img src="./img/Brisanje sadrzaja text box-a.svg"
+                                                id="brisiTekstIzabraniNaslov">
+                                        </div>
+                                        <div id="pretraga_polja_naslov_dd"></div>
+                                    </div>
+                                    <img src="./img/Otvaranje liste.svg" class="pretraga_polja_box_imgOtvaranje"
+                                        id="img_otvori_naslovi">
+                                </div>
+                            </div>
+                        </div>
+                        <div id="pretraga_polja_oblast" class="pretraga_polja_sekcija">
+                            <div class="wrapperZaOverflow">
+                                <span class="pretraga_polja_text">Oblast</span>
+                                <div class="pretraga_polja_box">
+                                    <div id="oblastWrapper">
+                                        <div id="oblast"></div>
+                                        <div id="pretraga_polja_oblast_dd"></div>
+                                    </div>
+                                    <img src="./img/Otvaranje liste.svg" class="pretraga_polja_box_imgOtvaranje"
+                                        id="img_otvori_oblast">
+                                </div>
+                            </div>
+
+                        </div>
+                        <div id="pretraga_polja_jezik" class="pretraga_polja_sekcija">
+                            <div class="wrapperZaOverflow">
+                                <span class="pretraga_polja_text">Jezik</span>
+                                <div class="pretraga_polja_box">
+                                    <div id="jezikWrapper">
+                                        <div id="jezik"></div>
+                                        <div id="pretraga_polja_jezik_dd"></div>
+                                    </div>
+                                    <img src="./img/Otvaranje liste.svg" class="pretraga_polja_box_imgOtvaranje"
+                                        id="img_jezik_otvori">
+                                </div>
+                            </div>
+                        </div>
+                        <div id="pretraga_polja_cena" class="pretraga_polja_sekcija">
+                            <div class="wrapperZaOverflow">
+                                <span class="pretraga_polja_text">Najviša cena</span>
+                                <div class="pretraga_polja_box">
+                                    <div contenteditable="true" id="cena"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="pretraga_polja_godine" class="pretraga_polja_sekcija">
+                            <div class="wrapperZaOverflow">
+                                <span class="pretraga_polja_text">Godina izdanja</span>
+                                <div id="godine">
+                                    <div id="od">
+                                        <div id="odGore">
+                                            <span>od</span>
+                                            <div id="odWrapper">
+                                                <div id="odBox"></div>
+                                                <div id="pretraga_polja_od_dd"></div>
+                                            </div>
+                                            <img src="./img/Otvaranje liste.svg" class="pretraga_polja_box_imgOtvaranje"
+                                                id="img_godine_od">
+                                        </div>
+
+                                    </div>
+                                    <div id="do">
+                                        <div id="doGore">
+                                            <span>do</span>
+                                            <div id="doWrapper">
+                                                <div id="doBox"></div>
+                                                <div id="pretraga_polja_do_dd"></div>
+                                            </div>
+                                            <img src="./img/Otvaranje liste.svg" class="pretraga_polja_box_imgOtvaranje"
+                                                id="img_godine_do">
+                                        </div>
+
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="pretraga_polja_wrapper">
+                        <div id="pretraga_polja_trazi">
+                            <span id="pretragaText">TRAŽI</span>
+                            <span id="lupaSlikaWrapper"><img src="./img/Lupa.svg"></span>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div id="content_wrapper_Sortiranje">
+                <img src="./img/Sortiranje.svg">
+                <span>Sortiranje</span>
+                <div id="sortiranje_box">
+                    <span>Cene rastuće</span>
+                    <img src="./img/Otvaranje liste.svg">
+                </div>
+                <img src="./img/Otvaranje liste.svg" id="sortiranjeDrugaSlika">
+            </div>
+            <div id="content_wrapper_Knjige">
+
+            </div>
+        </div>
+    </div>
+
+    <div id="modalDetaljnije">
+        <div id="modalWrapper">
+            <div id="modalWrapperZaglavlje">
+                <span>Podaci o knjizi</span>
+                <img src="./img/Beli X.svg" id="zatvoriModalniDetaljnije">
+            </div>
+            <div id="modalWrapperContent">
+                <div id="modalKnjigaKarticaWrapper"></div>
+                <div id="modalniDonjiDeo">
+                    <div id="DetaljnijeOpis"></div>
+                    <div id="DetaljnijePodaci"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="strelicaNaVrh"><a href="#header_slika"><img src="./img/Na vrh stranice.svg"></a></div>
+    <footer>
+        <span id="footer_naslov">PIN 2020</span>
+        <span id="footer_text">Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+            dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</span>
+    </footer>
+    <script src="scripts/script.js" type="text/javascript"></script>
+    <script src="scripts/knjige.js" type="text/javascript"></script>
+</body>
+
+</html>
